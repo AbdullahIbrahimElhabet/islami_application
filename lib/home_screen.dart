@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:islami_refresh/hadeth_tab.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami_refresh/hadeeth/hadeth_tab.dart';
 import 'package:islami_refresh/quran/quran_tab.dart';
 import 'package:islami_refresh/radio_tab.dart';
 import 'package:islami_refresh/sebha_tab.dart';
@@ -22,7 +23,8 @@ class _HomeScreenState extends State<HomeScreen> {
         Scaffold(
           appBar: AppBar(
             centerTitle: true,
-            title: Text("Islami", style: Theme.of(context).textTheme.headline1),
+            title: Text(AppLocalizations.of(context)!.islami,
+                style: Theme.of(context).textTheme.headline1),
           ),
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: currentIndex,
@@ -33,19 +35,19 @@ class _HomeScreenState extends State<HomeScreen> {
             items: [
               BottomNavigationBarItem(
                   icon: ImageIcon(AssetImage("assets/images/ic_quran.png")),
-                  label: "Quran",
+                  label: AppLocalizations.of(context)!.quran,
                   backgroundColor: Theme.of(context).primaryColor),
               BottomNavigationBarItem(
                   icon: ImageIcon(AssetImage("assets/images/ic_hadeth.png")),
-                  label: "Hadeeth",
+                  label: AppLocalizations.of(context)!.hadeth,
                   backgroundColor: Theme.of(context).primaryColor),
               BottomNavigationBarItem(
                   icon: ImageIcon(AssetImage("assets/images/ic_sebha.png")),
-                  label: "Sebha",
+                  label: AppLocalizations.of(context)!.sebha,
                   backgroundColor: Theme.of(context).primaryColor),
               BottomNavigationBarItem(
                   icon: ImageIcon(AssetImage("assets/images/ic_radio.png")),
-                  label: "Radio",
+                  label: AppLocalizations.of(context)!.radio,
                   backgroundColor: Theme.of(context).primaryColor),
             ],
           ),
