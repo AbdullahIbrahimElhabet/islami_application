@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_refresh/hadeeth/hadeth_name_item.dart';
+import 'package:islami_refresh/provider/theme_provider.dart';
+import 'package:provider/provider.dart';
 
 class HadethTab extends StatefulWidget {
   @override
@@ -13,10 +15,10 @@ class _HadethTabState extends State<HadethTab> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<ThemeProvider>(context);
     if (Ahadeth.isEmpty) loadFileHadeth();
     return Stack(
       children: [
-        Image.asset("assets/images/home_screen.png"),
         Scaffold(
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -25,7 +27,7 @@ class _HadethTabState extends State<HadethTab> {
               Center(
                   child: Text(
                 AppLocalizations.of(context)!.ahadeth,
-                style: Theme.of(context).textTheme.subtitle1,
+                style: Theme.of(context).textTheme.subtitle2,
               )),
               SizedBox(
                 height: 12,
@@ -33,7 +35,7 @@ class _HadethTabState extends State<HadethTab> {
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 30),
                 height: 1,
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).colorScheme.surface,
               ),
               SizedBox(
                 height: 12,
@@ -44,7 +46,7 @@ class _HadethTabState extends State<HadethTab> {
                     separatorBuilder: (context, index) {
                       return Container(
                         height: 1,
-                        color: Theme.of(context).primaryColor,
+                        color: Theme.of(context).colorScheme.surface,
                         margin: EdgeInsets.symmetric(horizontal: 30),
                       );
                     },

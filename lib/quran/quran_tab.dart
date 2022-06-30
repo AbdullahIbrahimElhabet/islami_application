@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:islami_refresh/provider/theme_provider.dart';
 import 'package:islami_refresh/quran/sura_name_item.dart';
+import 'package:provider/provider.dart';
 
 class QuranTab extends StatelessWidget {
   List<String> nameSura = [
@@ -121,9 +123,9 @@ class QuranTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<ThemeProvider>(context);
     return Stack(
       children: [
-        Image.asset("assets/images/home_screen.png"),
         Scaffold(
           body: Container(
             margin: EdgeInsets.symmetric(horizontal: 50),
@@ -136,7 +138,7 @@ class QuranTab extends StatelessWidget {
                       separatorBuilder: (context, index) {
                         return Container(
                           height: 1,
-                          color: Theme.of(context).primaryColor,
+                          color: Theme.of(context).colorScheme.surface,
                         );
                       },
                       itemBuilder: (context, index) {
