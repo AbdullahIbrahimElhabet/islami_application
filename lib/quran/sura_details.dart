@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islami_refresh/provider/theme_provider.dart';
 import 'package:islami_refresh/quran/sura_details_item.dart';
+import 'package:provider/provider.dart';
 
 class SuraDetails extends StatefulWidget {
   static const String screenName = "suradie";
@@ -14,11 +16,17 @@ class _SuraDetailsState extends State<SuraDetails> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<ThemeProvider>(context);
     var args = ModalRoute.of(context)?.settings.arguments as SuraDetailsArg;
     if (verses.isEmpty) loadFile(args.index);
     return Stack(
       children: [
-        Image.asset("assets/images/home_screen.png"),
+        Image.asset(
+          provider.changeBackGroundImage(),
+          fit: BoxFit.fill,
+          width: double.infinity,
+          height: double.infinity,
+        ),
         Scaffold(
           appBar: AppBar(
             centerTitle: true,
@@ -30,17 +38,17 @@ class _SuraDetailsState extends State<SuraDetails> {
           body: verses.length == 0
               ? Center(child: CircularProgressIndicator())
               : ListView.separated(
-                  itemCount: verses.length,
-                  separatorBuilder: (context, index) {
-                    return Container(
-                      height: 1,
-                      color: Theme.of(context).primaryColor,
+              itemCount: verses.length,
+              separatorBuilder: (context, index) {
+                return Container(
+                  height: 1,
+                      color: Theme.of(context).colorScheme.surface,
                       margin: EdgeInsets.symmetric(horizontal: 25),
                     );
-                  },
-                  itemBuilder: (context, index) {
-                    return SuraDetailsItem(verses[index], index + 1);
-                  }),
+              },
+              itemBuilder: (context, index) {
+                return SuraDetailsItem(verses[index], index + 1);
+              }),
         )
       ],
     );

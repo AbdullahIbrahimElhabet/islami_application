@@ -18,7 +18,7 @@ class HadethNameItem extends StatelessWidget {
         child: Center(
           child: Text(
             hadeth.title,
-            style: Theme.of(context).textTheme.subtitle1,
+            style: Theme.of(context).textTheme.subtitle2,
           ),
         ),
       ),

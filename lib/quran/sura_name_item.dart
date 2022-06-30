@@ -18,7 +18,7 @@ class SuraNamesItem extends StatelessWidget {
         child: Center(
           child: Text(
             suranNames,
-            style: Theme.of(context).textTheme.subtitle1,
+            style: Theme.of(context).textTheme.subtitle2,
           ),
         ),
       ),

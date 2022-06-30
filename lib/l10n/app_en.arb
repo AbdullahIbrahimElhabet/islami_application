@@ -4,5 +4,10 @@
   "hadeth": "Hadeeth",
   "sebha": "Sebha",
   "radio": "Radio",
-  "ahadeth": "Ahadeth"
+  "ahadeth": "Ahadeth",
+  "settings": "Settings",
+  "theme": "Theme",
+  "language": "Language",
+  "ligth": "Ligth",
+  "dark": "Dark"
 }
