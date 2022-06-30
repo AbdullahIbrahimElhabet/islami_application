@@ -4,5 +4,10 @@
   "hadeth": "حديث",
   "sebha": "تسبيح",
   "radio": "راديو",
-  "ahadeth": "احاديث"
+  "ahadeth": "احاديث",
+  "settings": "الاعدادات",
+  "theme": "المظهر",
+  "language": "اللغة",
+  "ligth": "فاتح",
+  "dark": "غامق"
 }

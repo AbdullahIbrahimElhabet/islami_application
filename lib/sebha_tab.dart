@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:islami_refresh/provider/theme_provider.dart';
+import 'package:provider/provider.dart';
 
 class SebhaTab extends StatefulWidget {
   @override
@@ -19,9 +21,9 @@ class _SebhaTabState extends State<SebhaTab> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<ThemeProvider>(context);
     return Stack(
       children: [
-        Image.asset("assets/images/home_screen.png"),
         Scaffold(
           body: Container(
             width: double.infinity,
@@ -43,7 +45,7 @@ class _SebhaTabState extends State<SebhaTab> {
                           child: Transform.rotate(
                               angle: angle,
                               child:
-                                  Image.asset("assets/images/body_sebha.png"))),
+                              Image.asset("assets/images/body_sebha.png"))),
                     ),
                   ],
                 ),
@@ -67,11 +69,13 @@ class _SebhaTabState extends State<SebhaTab> {
                 Container(
                   padding: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
                   decoration: BoxDecoration(
-                      color: Theme.of(context).primaryColor,
+                      color: Theme.of(context).colorScheme.surface,
                       borderRadius: BorderRadius.circular(20)),
                   child: Text(
                     tasebeh[index],
-                    style: TextStyle(color: Colors.white, fontSize: 16),
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.onPrimary,
+                        fontSize: 16),
                   ),
                 )
               ],
