@@ -34,6 +34,7 @@ dependencies:
   intl: ^0.17.0 # Add this line
   provider: ^6.0.3
   shared_preferences: ^2.0.15
+  curved_navigation_bar: ^1.0.3
 
 
 
