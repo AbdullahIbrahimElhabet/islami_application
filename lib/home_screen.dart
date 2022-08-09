@@ -3,7 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_refresh/hadeeth/hadeth_tab.dart';
 import 'package:islami_refresh/provider/theme_provider.dart';
 import 'package:islami_refresh/quran/quran_tab.dart';
-import 'package:islami_refresh/radio_tab.dart';
+import 'package:islami_refresh/radio/radio_tab.dart';
 import 'package:islami_refresh/sebha_tab.dart';
 import 'package:islami_refresh/setting/setting_tab.dart';
 import 'package:provider/provider.dart';
